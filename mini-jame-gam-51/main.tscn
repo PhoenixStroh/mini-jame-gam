@@ -1,3 +1,71 @@
-[gd_scene format=3 uid="uid://c7n27b3in13ac"]
+[gd_scene format=3 uid="uid://cq8api2vch67t"]
 
-[node name="Main_tscn" type="Node" unique_id=1155844856]
+[ext_resource type="Script" uid="uid://mj3mm2a6m4ft" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7dm0k"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
+font_size = 200
+
+[node name="Main" type="Control" unique_id=1794076326]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=82809156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1044819189]
+layout_mode = 2
+
+[node name="HSeparator01" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=247028109]
+layout_mode = 2
+theme_override_constants/separation = 80
+theme_override_styles/separator = SubResource("StyleBoxLine_7dm0k")
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1076455968]
+layout_mode = 2
+text = "Mini Jame Gam 51"
+label_settings = SubResource("LabelSettings_ig7tw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator02" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=627804025]
+layout_mode = 2
+theme_override_constants/separation = 80
+theme_override_styles/separator = SubResource("StyleBoxLine_7dm0k")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1807765698]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_right = 600
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=478287239]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=907371761]
+layout_mode = 2
+text = "PLAY"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1618889992]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
