@@ -8,13 +8,13 @@
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://dtpvehpknw5ja" path="res://images/Splash_003.PNG" id="4_e8heu"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
-[ext_resource type="PackedScene" uid="uid://brtddqrbqsyxi" path="res://models/jame_gam_animated_scene_equivalent_v2.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://kill42kd8qi6" path="res://images/Splash_004.PNG" id="5_rvswv"]
 [ext_resource type="Texture2D" uid="uid://c5iofnkkws8on" path="res://images/Splash_005.PNG" id="6_boyg6"]
 [ext_resource type="Texture2D" uid="uid://cqm3ruq53frww" path="res://images/Splash_006.PNG" id="7_e36ub"]
 [ext_resource type="Texture2D" uid="uid://dfvbqgtadin3y" path="res://images/Splash_007.PNG" id="8_hb5m1"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://jrrilab56mnj" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x5p1p"]
 animations = [{
@@ -58,7 +58,7 @@ label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/Spec
 fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPicture")
 splash_animation = NodePath("OnCatchSplash/AnimatedSprite2D")
 options_menu_parent = NodePath("OptionsMenuParent")
-fish_guy_models = NodePath("Jame_Gam_Animated_V2")
+fish_guy_models = NodePath("Jame_Gam_Animated_V3")
 hook = NodePath("Hook")
 
 [node name="OnCatchSplash" type="MarginContainer" parent="." unique_id=708484462]
@@ -122,7 +122,7 @@ theme_override_constants/margin_bottom = 100
 [node name="OptionsMenu" parent="OptionsMenuParent" unique_id=1475999769 instance=ExtResource("4_eow3j")]
 layout_mode = 2
 
-[node name="Jame_Gam_Animated_V2" parent="." unique_id=47774320 instance=ExtResource("4_j5wjh")]
+[node name="Jame_Gam_Animated_V3" parent="." unique_id=1620742846 instance=ExtResource("11_7sc4i")]
 
 [node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
 position = Vector2(1121, 920)

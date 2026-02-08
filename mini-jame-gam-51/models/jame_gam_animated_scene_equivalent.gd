@@ -18,7 +18,7 @@ func play(animation_name:String) -> void:
 
 func play_intro() -> void:
 	camera_animation_player.play("introduction")
-	await camera_animation_player.animation_finished
+	await get_tree().create_timer(3).timeout
 	intro_finished.emit()
 
 
