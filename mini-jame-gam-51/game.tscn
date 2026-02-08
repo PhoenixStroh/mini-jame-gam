@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://dt2v0irfc8beo" path="res://images/Splash_001.PNG" id="2_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
-[ext_resource type="Script" uid="uid://bs3ggahkyeu4q" path="res://audio_manager.gd" id="2_xfvwf"]
+[ext_resource type="Script" path="res://audio_manager.gd" id="2_xfvwf"]
 [ext_resource type="Texture2D" uid="uid://h5p0dea6pry5" path="res://images/Splash_002.PNG" id="3_80cx4"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
@@ -15,29 +15,33 @@
 [ext_resource type="Texture2D" uid="uid://cqm3ruq53frww" path="res://images/Splash_006.PNG" id="7_e36ub"]
 [ext_resource type="Texture2D" uid="uid://dfvbqgtadin3y" path="res://images/Splash_007.PNG" id="8_hb5m1"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="8_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://cnt2f1q8dqd3n" path="res://images/bass.png" id="9_hve3p"]
 [ext_resource type="AudioStream" uid="uid://da8h1xl58rdws" path="res://audio/bass_bass.ogg" id="10_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://jrrilab56mnj" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://c8bxjb0fhsvgx" path="res://images/anchovies.png" id="11_iotsf"]
-[ext_resource type="Texture2D" uid="uid://jif7im1xexq2" path="res://images/clam.png" id="11_lc2xo"]
 [ext_resource type="AudioStream" uid="uid://bievpi5f7h8d8" path="res://audio/clam_castinet.ogg" id="12_215e1"]
 [ext_resource type="AudioStream" uid="uid://bxlhvvncjv6kr" path="res://audio/anchovy_choir.ogg" id="12_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://j67thmsguo4b" path="res://images/cod.png" id="13_80cx4"]
 [ext_resource type="AudioStream" uid="uid://cp1ydtlpimf3s" path="res://audio/cod_ukulele.ogg" id="14_e8heu"]
 [ext_resource type="Texture2D" uid="uid://mnkne0s0bbf" path="res://images/electric_eel.png" id="15_rvswv"]
+[ext_resource type="Texture2D" uid="uid://cnt2f1q8dqd3n" path="res://images/bass.png" id="16_80cx4"]
 [ext_resource type="AudioStream" uid="uid://qexj62t4vn5s" path="res://audio/eel_electric_guitar.ogg" id="16_boyg6"]
-[ext_resource type="Texture2D" uid="uid://dl3uw1xbacl1n" path="res://images/flounder.png" id="17_e36ub"]
+[ext_resource type="Texture2D" uid="uid://jif7im1xexq2" path="res://images/clam.png" id="16_e8heu"]
 [ext_resource type="AudioStream" uid="uid://bqfw4gvhyki8m" path="res://audio/flounder_drums.ogg" id="18_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://dl3uw1xbacl1n" path="res://images/flounder.png" id="18_rvswv"]
 [ext_resource type="Texture2D" uid="uid://dmbtfqn7xuhvi" path="res://images/manatee.png" id="19_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://buwpvrt7gpl00" path="res://images/seahorse.png" id="20_e36ub"]
 [ext_resource type="AudioStream" uid="uid://cdppi7fox0ckt" path="res://audio/manatee_cowbell.ogg" id="20_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://r42gd1mpsphb" path="res://images/tuna.png" id="22_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://br3dnxx1o2sjn" path="res://images/salmon.png" id="23_f1jbl"]
 [ext_resource type="AudioStream" uid="uid://dmxruhfxuskts" path="res://audio/salmon_guitar.ogg" id="24_vaj68"]
-[ext_resource type="Texture2D" uid="uid://buwpvrt7gpl00" path="res://images/seahorse.png" id="25_i2p71"]
 [ext_resource type="AudioStream" uid="uid://oimh0pfuxsa2" path="res://audio/seahorse_trumpet.ogg" id="26_xa8c5"]
-[ext_resource type="Texture2D" uid="uid://r42gd1mpsphb" path="res://images/tuna.png" id="27_5b14r"]
 [ext_resource type="AudioStream" uid="uid://bwdqfissecumh" path="res://audio/tuna_cello.ogg" id="28_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://cedabo0c6w2mo" path="res://images/whale.png" id="29_36jdj"]
 [ext_resource type="AudioStream" uid="uid://j4wsim8d0brw" path="res://audio/whale_choir.ogg" id="30_xfvwf"]
-[ext_resource type="PackedScene" uid="uid://jrrilab56mnj" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
+
+[sub_resource type="Environment" id="Environment_7sc4i"]
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x5p1p"]
 animations = [{
@@ -78,6 +82,70 @@ radius = 107.25
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
 radius = 288.4997
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1i01"]
+transparency = 1
+albedo_texture = ExtResource("11_iotsf")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_7sc4i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8heu"]
+transparency = 1
+albedo_texture = ExtResource("16_80cx4")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r62pu"]
+transparency = 1
+albedo_texture = ExtResource("16_e8heu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klri6"]
+transparency = 1
+albedo_texture = ExtResource("13_80cx4")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvswv"]
+transparency = 1
+albedo_texture = ExtResource("16_e8heu")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boyg6"]
+transparency = 1
+albedo_texture = ExtResource("18_rvswv")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu6ph"]
+transparency = 1
+albedo_texture = ExtResource("19_x5p1p")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edr7y"]
+transparency = 1
+albedo_texture = ExtResource("5_7jktm")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq12w"]
+transparency = 1
+albedo_texture = ExtResource("23_f1jbl")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb5m1"]
+transparency = 1
+albedo_texture = ExtResource("20_e36ub")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v2jo"]
+transparency = 1
+albedo_texture = ExtResource("22_x5p1p")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_l1i01"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhcbd"]
+transparency = 1
+albedo_texture = ExtResource("29_36jdj")
+billboard_mode = 2
+
 [node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label", "fish_picture", "splash_animation", "options_menu_parent", "fish_guy_models", "hook")]
 script = ExtResource("1_80nbo")
 label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/SpeciesText")
@@ -86,6 +154,13 @@ splash_animation = NodePath("OnCatchSplash/AnimatedSprite2D")
 options_menu_parent = NodePath("OptionsMenuParent")
 fish_guy_models = NodePath("Jame_Gam_Animated_V3")
 hook = NodePath("Hook")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=723701942]
+environment = SubResource("Environment_7sc4i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1965010801]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="AudioManager" type="Node" parent="." unique_id=222330517]
 script = ExtResource("2_xfvwf")
@@ -168,8 +243,9 @@ position = Vector2(0, 677)
 shape = SubResource("CircleShape2D_36jdj")
 debug_color = Color(0.951574, 0.018650377, 0.5562045, 0.41960785)
 
-[node name="Anchovies" parent="." unique_id=1031080353 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Anchovies" parent="." unique_id=1031080353 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2135)
+billboard = NodePath("../Anchovies3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -187,14 +263,15 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchovies" unique_id=1825983216]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Bass" parent="." unique_id=464717527 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Bass" parent="." unique_id=464717527 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 1499)
+billboard = NodePath("../Bass3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
 species_catch_text = "Bass? Bass?? Bass!! Bass??? "
-species_picture = ExtResource("9_hve3p")
+species_picture = ExtResource("16_80cx4")
 music = ExtResource("10_mfdv2")
 
 [node name="StartPoint" type="Node2D" parent="Bass" unique_id=523058986]
@@ -206,14 +283,15 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bass" unique_id=369705800]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Clam" parent="." unique_id=493428728 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Clam" parent="." unique_id=493428728 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2959)
+billboard = NodePath("../Clam3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
 species_catch_text = "You Caught The Clams!"
-species_picture = ExtResource("11_lc2xo")
+species_picture = ExtResource("16_e8heu")
 music = ExtResource("12_215e1")
 
 [node name="StartPoint" type="Node2D" parent="Clam" unique_id=1449742282]
@@ -225,8 +303,9 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clam" unique_id=968342720]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Cod" parent="." unique_id=1344463041 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Cod" parent="." unique_id=1344463041 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 1748)
+billboard = NodePath("../Cod3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -244,8 +323,9 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cod" unique_id=216468926]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="ElectricEel" parent="." unique_id=503991990 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="ElectricEel" parent="." unique_id=503991990 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2051)
+billboard = NodePath("../Eel3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -263,14 +343,15 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElectricEel" unique_id=122922767]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Flounder" parent="." unique_id=1283615116 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Flounder" parent="." unique_id=1283615116 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2851)
+billboard = NodePath("../Flounder3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
 species_catch_text = "You Caught Flounder!"
-species_picture = ExtResource("17_e36ub")
+species_picture = ExtResource("18_rvswv")
 music = ExtResource("18_hb5m1")
 
 [node name="StartPoint" type="Node2D" parent="Flounder" unique_id=1985257042]
@@ -282,8 +363,9 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flounder" unique_id=621677556]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Manatee" parent="." unique_id=1877942414 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Manatee" parent="." unique_id=1877942414 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 1849)
+billboard = NodePath("../Manatee3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -301,9 +383,10 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manatee" unique_id=731387058]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Octopus" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Octopus" parent="." unique_id=110384268 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(841.00006, 3098.9998)
 scale = Vector2(0.5388889, 0.5388889)
+billboard = NodePath("../Octopus3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -321,8 +404,9 @@ position = Vector2(1809.897, 36.185516)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Octopus" unique_id=177041305]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Salmon" parent="." unique_id=2088331146 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Salmon" parent="." unique_id=2088331146 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2340)
+billboard = NodePath("../Salmon3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -340,14 +424,15 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Salmon" unique_id=126572992]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Seahorse" parent="." unique_id=1940487632 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Seahorse" parent="." unique_id=1940487632 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 1674)
+billboard = NodePath("../Seahorse3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
 species_catch_text = "You Caught Seahorse!"
-species_picture = ExtResource("25_i2p71")
+species_picture = ExtResource("20_e36ub")
 music = ExtResource("26_xa8c5")
 
 [node name="StartPoint" type="Node2D" parent="Seahorse" unique_id=1978537973]
@@ -359,14 +444,15 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Seahorse" unique_id=871967203]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Tuna" parent="." unique_id=1042806165 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Tuna" parent="." unique_id=1042806165 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(820, 2461)
+billboard = NodePath("../Tuna3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
 species_catch_text = "You Caught Tuna!"
-species_picture = ExtResource("27_5b14r")
+species_picture = ExtResource("22_x5p1p")
 music = ExtResource("28_bnpwn")
 
 [node name="StartPoint" type="Node2D" parent="Tuna" unique_id=2013503781]
@@ -378,8 +464,9 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tuna" unique_id=1211523103]
 shape = SubResource("CircleShape2D_7jktm")
 
-[node name="Whale" parent="." unique_id=341391656 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Whale" parent="." unique_id=341391656 node_paths=PackedStringArray("billboard", "start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(847, 2569)
+billboard = NodePath("../Whale3D")
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -396,6 +483,66 @@ position = Vector2(941, 23.99997)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whale" unique_id=1639102472]
 shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Anchovies3D" type="MeshInstance3D" parent="." unique_id=1389537294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0062394, 0.9694381, -3.0476122)
+material_override = SubResource("StandardMaterial3D_l1i01")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Bass3D" type="MeshInstance3D" parent="." unique_id=1734635684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8684006, 1.3567348, -1.5238061)
+material_override = SubResource("StandardMaterial3D_e8heu")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Clam3D" type="MeshInstance3D" parent="." unique_id=1653983797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7625346, 1.3567348, -1.5238061)
+material_override = SubResource("StandardMaterial3D_r62pu")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Cod3D" type="MeshInstance3D" parent="." unique_id=73970566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7625346, 1.8773355, -1.5238061)
+material_override = SubResource("StandardMaterial3D_klri6")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Eel3D" type="MeshInstance3D" parent="." unique_id=1517317265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1560793, 0.9694381, -3.0476122)
+material_override = SubResource("StandardMaterial3D_rvswv")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Flounder3D" type="MeshInstance3D" parent="." unique_id=914882070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3804994, 1.1753416, -1.9045897)
+material_override = SubResource("StandardMaterial3D_boyg6")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Manatee3D" type="MeshInstance3D" parent="." unique_id=429635401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3804994, 2.1753416, -1.9045897)
+material_override = SubResource("StandardMaterial3D_eu6ph")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Octopus3D" type="MeshInstance3D" parent="." unique_id=767377515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6073265, 2.1753416, -1.9045897)
+material_override = SubResource("StandardMaterial3D_edr7y")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Salmon3D" type="MeshInstance3D" parent="." unique_id=1412019078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1008577, 1.2896886, -3.0476122)
+material_override = SubResource("StandardMaterial3D_kq12w")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Seahorse3D" type="MeshInstance3D" parent="." unique_id=746222754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5879302, 1.2896886, -3.0476122)
+material_override = SubResource("StandardMaterial3D_hb5m1")
+mesh = SubResource("QuadMesh_7sc4i")
+
+[node name="Tuna3D" type="MeshInstance3D" parent="." unique_id=1006898060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2896266, 1.2896886, -3.0476122)
+material_override = SubResource("StandardMaterial3D_4v2jo")
+mesh = SubResource("QuadMesh_l1i01")
+
+[node name="Whale3D" type="MeshInstance3D" parent="." unique_id=219404281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2079911, 1.2896886, -3.0476122)
+material_override = SubResource("StandardMaterial3D_qhcbd")
+mesh = SubResource("QuadMesh_7sc4i")
 
 [connection signal="back_requested" from="OptionsMenuParent/OptionsMenu" to="." method="_on_options_menu_back_requested"]
 [connection signal="caught_fish" from="Hook" to="." method="_on_hook_caught_fish"]

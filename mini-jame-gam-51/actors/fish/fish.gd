@@ -1,6 +1,7 @@
 class_name Fish
 extends Node2D
 
+@export var billboard: MeshInstance3D
 @export var start_point: Node2D
 @export var end_point: Node2D
 @export var catch_box: CollisionShape2D
@@ -35,7 +36,6 @@ func _ready() -> void:
 	catch_box.reparent(_area)
 
 	# Move the fish.
-
 	_movement_tween = get_tree().create_tween().set_loops()
 	_movement_tween.tween_property(self, "global_position", _start_position, movement_duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	_movement_tween.tween_interval(2)

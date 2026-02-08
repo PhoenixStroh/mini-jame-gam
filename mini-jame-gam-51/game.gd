@@ -38,6 +38,7 @@ func _on_hook_caught_fish(fish: Fish) -> void:
 	fish_picture.visible = true
 	splash_animation.visible = true
 
+	fish.billboard.visible = true
 	splash_animation.play("default")
 	fish_guy_models.increase_bounce()
 	label.text = fish.species_catch_text
