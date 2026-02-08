@@ -1,6 +1,7 @@
 extends Node2D
 
-signal changed_fishing(fishing: int)
+signal changed_fishing(fishing: bool)
+signal during_fish_splash(fish: Fish)
 
 @export var label: Label
 @export var fish_picture: TextureRect
@@ -43,6 +44,13 @@ func _on_hook_caught_fish(fish: Fish) -> void:
 	fish_guy_models.increase_bounce()
 	label.text = fish.species_catch_text
 	fish_picture.texture = fish.species_picture
+
+	during_fish_splash.emit(fish)
+	fish._audio.volume_db = -999
+	fish._area.monitorable = false
+	fish._area.monitoring = false
+	fish._area.visible = false
+
 	await get_tree().create_timer(2).timeout
 	splash_animation.play_backwards("default")
 	await splash_animation.animation_finished

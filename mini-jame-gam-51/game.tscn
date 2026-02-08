@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://audio_manager.gd" id="2_xfvwf"]
 [ext_resource type="Texture2D" uid="uid://h5p0dea6pry5" path="res://images/Splash_002.PNG" id="3_80cx4"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://c8k18diyxfgod" path="res://actors/fish/overwater_player.tscn" id="3_l1i01"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://dtpvehpknw5ja" path="res://images/Splash_003.PNG" id="4_e8heu"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
@@ -164,6 +165,7 @@ shadow_enabled = true
 
 [node name="AudioManager" type="Node" parent="." unique_id=222330517]
 script = ExtResource("2_xfvwf")
+overwater_player = ExtResource("3_l1i01")
 
 [node name="OnCatchSplash" type="MarginContainer" parent="." unique_id=708484462]
 anchors_preset = 15
@@ -484,6 +486,8 @@ position = Vector2(941, 23.99997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whale" unique_id=1639102472]
 shape = SubResource("CircleShape2D_7jktm")
 
+[connection signal="changed_fishing" from="." to="AudioManager" method="on_changed_fishing"]
+[connection signal="during_fish_splash" from="." to="AudioManager" method="on_during_fish_splash"]
 [node name="Anchovies3D" type="MeshInstance3D" parent="." unique_id=1389537294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0062394, 0.9694381, -3.0476122)
 material_override = SubResource("StandardMaterial3D_l1i01")
