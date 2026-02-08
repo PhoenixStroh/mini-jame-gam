@@ -10,6 +10,8 @@ extends Node2D
 @export var species_catch_text: String
 @export var species_picture: Texture2D
 
+@export var music: AudioStream
+
 @export var _area: Area2D
 @export var _audio: AudioStreamPlayer2D
 
@@ -19,6 +21,9 @@ var _movement_tween: Tween
 
 
 func _ready() -> void:
+	_audio.stream = music
+	_audio.play()
+	
 	# Connect to volume signals.
 	OptionsManager.audio_level_changed.connect(reset_audio_level)
 

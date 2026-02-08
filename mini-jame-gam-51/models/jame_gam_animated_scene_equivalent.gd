@@ -2,9 +2,11 @@ class_name FishGuyModels
 extends Node3D
 
 @export var animation_tree: AnimationTree
+@export var camera_animation_player: AnimationPlayer
 
 
 func _ready() -> void:
+	camera_animation_player.play("introduction")
 	play("idle_bounce")
 
 
