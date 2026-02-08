@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck387vuo3awsi"
-path="res://.godot/imported/tile_for_scrolling_background.png-871f9ae105196f39ccc98a29df8801a3.ctex"
+path="res://.godot/imported/tile_for_scrolling_background01.png-a39bf926992112105ff876fe650cdd90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tile_for_scrolling_background.png"
-dest_files=["res://.godot/imported/tile_for_scrolling_background.png-871f9ae105196f39ccc98a29df8801a3.ctex"]
+source_file="res://images/tile_for_scrolling_background01.png"
+dest_files=["res://.godot/imported/tile_for_scrolling_background01.png-a39bf926992112105ff876fe650cdd90.ctex"]
 
 [params]
 

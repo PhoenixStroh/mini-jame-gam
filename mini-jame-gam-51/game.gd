@@ -8,20 +8,27 @@ extends Node2D
 @export var hook: Hook
 
 var fishing: bool = false
+var intro_finished: bool = false
+
+
+func _ready() -> void:
+	fish_guy_models.intro_finished.connect(func(): intro_finished = true)
+	fish_guy_models.play_intro()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("catch"):
-		if not fishing:
-			fishing = true
-			hook.can_catch = true
-			fish_guy_models.play("line_idle")
-		elif fishing:
-			fishing = false
-			hook.reset()
-			fish_guy_models.play("idle_bounce")
-	if event.is_action_pressed("ui_cancel"):
-		options_menu_parent.visible = !options_menu_parent.visible 
+	if intro_finished:
+		if event.is_action_pressed("catch"):
+			if not fishing:
+				fishing = true
+				hook.can_catch = true
+				fish_guy_models.play("line_idle")
+			elif fishing:
+				fishing = false
+				hook.reset()
+				fish_guy_models.play("idle_bounce")
+		if event.is_action_pressed("ui_cancel"):
+			options_menu_parent.visible = !options_menu_parent.visible 
 
 
 func _on_hook_caught_fish(fish: Fish) -> void:
