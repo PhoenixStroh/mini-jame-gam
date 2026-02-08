@@ -1,5 +1,7 @@
 extends Node2D
 
+signal changed_fishing(fishing: int)
+
 @export var label: Label
 @export var fish_picture: TextureRect
 @export var options_menu_parent: Control
@@ -13,10 +15,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("catch"):
 		if not fishing:
 			fishing = true
+			changed_fishing.emit(fishing)
 			hook.can_catch = true
 			fish_guy_models.play("line_idle")
 		elif fishing:
 			fishing = false
+			changed_fishing.emit(fishing)
 			hook.reset()
 			fish_guy_models.play("idle_bounce")
 	if event.is_action_pressed("ui_cancel"):

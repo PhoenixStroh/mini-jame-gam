@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://bs3ggahkyeu4q" path="res://audio_manager.gd" id="2_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
@@ -48,6 +49,9 @@ fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPictu
 options_menu_parent = NodePath("OptionsMenuParent")
 fish_guy_models = NodePath("Jame_Gam_Animated_V2")
 hook = NodePath("Hook")
+
+[node name="AudioManager" type="Node" parent="." unique_id=222330517]
+script = ExtResource("2_xfvwf")
 
 [node name="OnCatchSplash" type="MarginContainer" parent="." unique_id=708484462]
 anchors_preset = 15
@@ -115,6 +119,7 @@ position = Vector2(1121, 2674)
 gizmo_extents = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint" unique_id=785354946]
+position = Vector2(0, 677)
 shape = SubResource("CircleShape2D_36jdj")
 debug_color = Color(0.951574, 0.018650377, 0.5562045, 0.41960785)
 
@@ -157,7 +162,7 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Clam" parent="." unique_id=493428728 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 2959)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -176,7 +181,7 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Cod" parent="." unique_id=1344463041 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 1748)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
@@ -195,12 +200,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="ElectricEel" parent="." unique_id=503991990 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 2051)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught the Electric Eel!"
 species_picture = ExtResource("15_rvswv")
 music = ExtResource("16_boyg6")
 
@@ -214,12 +219,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Flounder" parent="." unique_id=1283615116 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 2851)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught Flounder!"
 species_picture = ExtResource("17_e36ub")
 music = ExtResource("18_hb5m1")
 
@@ -233,12 +238,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Manatee" parent="." unique_id=1877942414 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 1849)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught Manatee!"
 species_picture = ExtResource("19_x5p1p")
 music = ExtResource("20_qhcbd")
 
@@ -252,13 +257,13 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Octopus" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(841.00006, 852.00006)
+position = Vector2(841.00006, 3098.9998)
 scale = Vector2(0.5388889, 0.5388889)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "Damn.. You really got my ass.."
+species_catch_text = "You Caught Octopus!"
 species_picture = ExtResource("5_7jktm")
 music = ExtResource("8_j5wjh")
 
@@ -272,12 +277,12 @@ position = Vector2(1809.897, 36.185516)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Salmon" parent="." unique_id=2088331146 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 2340)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught Salmon!"
 species_picture = ExtResource("23_f1jbl")
 music = ExtResource("24_vaj68")
 
@@ -291,12 +296,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Seahorse" parent="." unique_id=1940487632 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 1674)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught Seahorse!"
 species_picture = ExtResource("25_i2p71")
 music = ExtResource("26_xa8c5")
 
@@ -310,12 +315,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Tuna" parent="." unique_id=1042806165 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(820, 2461)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "You Caught Tuna!"
 species_picture = ExtResource("27_5b14r")
 music = ExtResource("28_bnpwn")
 
@@ -329,12 +334,12 @@ position = Vector2(941, 23.99997)
 shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Whale" parent="." unique_id=341391656 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
-position = Vector2(820, 1499)
+position = Vector2(847, 2569)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_catch_text = "You Caught a Cod!"
+species_catch_text = "WOAH???? OH MY GOD??????"
 species_picture = ExtResource("29_36jdj")
 music = ExtResource("30_xfvwf")
 

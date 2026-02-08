@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://c8k18diyxfgod"]
+
+[node name="OverwaterPlayer" type="AudioStreamPlayer" unique_id=799101091]
+bus = &"Overwater"

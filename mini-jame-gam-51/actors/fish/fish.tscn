@@ -13,3 +13,4 @@ _audio = NodePath("AudioStreamPlayer2D")
 max_distance = 800.0
 attenuation = 3.0314333
 panning_strength = 3.0
+bus = &"Underwater"
