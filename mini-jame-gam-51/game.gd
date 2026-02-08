@@ -3,9 +3,22 @@ extends Node2D
 @export var label: Label
 @export var fish_picture: TextureRect
 @export var options_menu_parent: Control
+@export var fish_guy_models: FishGuyModels
+@export var hook: Hook
+
+var fishing: bool = false
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("catch"):
+		if not fishing:
+			fishing = true
+			hook.can_catch = true
+			fish_guy_models.play("line_idle")
+		elif fishing:
+			fishing = false
+			hook.reset()
+			fish_guy_models.play("idle_bounce")
 	if event.is_action_pressed("ui_cancel"):
 		options_menu_parent.visible = !options_menu_parent.visible 
 
