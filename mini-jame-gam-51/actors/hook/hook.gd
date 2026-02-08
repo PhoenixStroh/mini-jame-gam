@@ -29,8 +29,9 @@ func _input(event: InputEvent) -> void:
 
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	if can_catch:
+		var input_direction = Input.get_vector("left", "right", "up", "down")
+		velocity = input_direction * speed
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
