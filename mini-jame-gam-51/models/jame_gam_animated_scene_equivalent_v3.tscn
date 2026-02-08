@@ -81,6 +81,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(1, 3.0647779, 11)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("salmon:blend_shapes/Swim")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube:blend_shapes/Swim")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("salmon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.0379425, -5.955367, 5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cube:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.2113042, -4.5612617, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_looe2"]
 resource_name = "introduction"
@@ -97,6 +145,54 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(1, -4.33, 11), Vector3(1, -4.33, 11), Vector3(1, -4.33, 11), Vector3(1, 3.8, 11), Vector3(1, 3.0647779, 11)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("salmon:blend_shapes/Swim")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.8666667, 1.4, 1.9, 2.7333333, 3.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.0, 1.0, -1.0, 1.0, -1.0, 1.0, -1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube:blend_shapes/Swim")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.8666667, 1.4, 1.9666667, 2.5333333, 3.1333334, 3.6333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.0, 1.0, -1.0, 1.0, -1.0, 1.0, -1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("salmon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.0379425, -5.955367, 5), Vector3(4.6100307, -5.955367, 5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cube:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.6666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.2113042, -4.5612617, 5), Vector3(-2.0647159, -4.5612617, 5)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_orbyh"]
 _data = {
@@ -107,7 +203,7 @@ _data = {
 [node name="Jame_Gam_Animated_V3" unique_id=1233856910 node_paths=PackedStringArray("animation_tree", "camera_animation_player") instance=ExtResource("1_qly28")]
 script = ExtResource("2_18w7e")
 animation_tree = NodePath("AnimationTree")
-camera_animation_player = NodePath("CameraAnimationPlayer")
+camera_animation_player = NodePath("CameraAndFishAnimationPlayer")
 
 [node name="Camera" parent="." index="1" unique_id=2048717654]
 transform = Transform3D(1, 0, 0, 0, 0.9911512, 0.13273758, 0, -0.13273758, 0.9911512, 1, 3.0647779, 11)
@@ -138,17 +234,17 @@ bones/13/rotation = Quaternion(-0.00023141275, 0.00026925368, -0.016990561, 0.99
 bones/13/scale = Vector3(0.8961416, 2.0482297, 0.9776621)
 
 [node name="salmon" parent="." index="4" unique_id=826190739]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4760008, -5.955367, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0379425, -5.955367, 5)
 
 [node name="Cube" parent="." index="5" unique_id=133328200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8811297, -4.5612617, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2113042, -4.5612617, 5)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="7" unique_id=1950082652]
 tree_root = SubResource("AnimationNodeStateMachine_5lpkc")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle_bounce/blend_position = 0.0
 
-[node name="CameraAnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=758977102]
+[node name="CameraAndFishAnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=758977102]
 libraries/ = SubResource("AnimationLibrary_orbyh")
 
 [node name="Label3D" type="Label3D" parent="." index="9" unique_id=768751398]
