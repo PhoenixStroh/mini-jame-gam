@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bs3ggahkyeu4q" path="res://audio_manager.gd" id="2_xfvwf"]
 [ext_resource type="Texture2D" uid="uid://h5p0dea6pry5" path="res://images/Splash_002.PNG" id="3_80cx4"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
-[ext_resource type="PackedScene" path="res://actors/fish/overwater_player.tscn" id="3_l1i01"]
+[ext_resource type="PackedScene" uid="uid://c8k18diyxfgod" path="res://actors/fish/overwater_player.tscn" id="3_l1i01"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://dtpvehpknw5ja" path="res://images/Splash_003.PNG" id="4_e8heu"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dfvbqgtadin3y" path="res://images/Splash_007.PNG" id="8_hb5m1"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="8_j5wjh"]
 [ext_resource type="AudioStream" uid="uid://da8h1xl58rdws" path="res://audio/bass_bass.ogg" id="10_mfdv2"]
-[ext_resource type="PackedScene" uid="uid://jrrilab56mnj" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
+[ext_resource type="PackedScene" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://c8bxjb0fhsvgx" path="res://images/anchovies.png" id="11_iotsf"]
 [ext_resource type="AudioStream" uid="uid://bievpi5f7h8d8" path="res://audio/clam_castinet.ogg" id="12_215e1"]
 [ext_resource type="AudioStream" uid="uid://bxlhvvncjv6kr" path="res://audio/anchovy_choir.ogg" id="12_lc2xo"]
@@ -151,7 +151,7 @@ billboard_mode = 2
 script = ExtResource("1_80nbo")
 label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/SpeciesText")
 fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPicture")
-splash_animation = NodePath("OnCatchSplash/AnimatedSprite2D")
+splash_animation = NodePath("OnCatchSplash/CenterContainer/Control/AnimatedSprite2D")
 options_menu_parent = NodePath("OptionsMenuParent")
 fish_guy_models = NodePath("Jame_Gam_Animated_V3")
 hook = NodePath("Hook")
@@ -180,9 +180,15 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OnCatchSplash" unique_id=928153341]
+[node name="CenterContainer" type="CenterContainer" parent="OnCatchSplash" unique_id=748870479]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="OnCatchSplash/CenterContainer" unique_id=1776426345]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OnCatchSplash/CenterContainer/Control" unique_id=928153341]
 visible = false
-position = Vector2(970, 550)
+position = Vector2(10, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x5p1p")
 frame = 6
@@ -233,8 +239,6 @@ layout_mode = 2
 [node name="Hook" parent="." unique_id=1417838539 node_paths=PackedStringArray("end_marker") instance=ExtResource("3_feb5d")]
 position = Vector2(1121, 920)
 end_marker = NodePath("../EndPoint")
-
-[node name="Camera2D" type="Camera2D" parent="Hook" unique_id=2112189339]
 
 [node name="EndPoint" type="Marker2D" parent="." unique_id=481025697]
 position = Vector2(1121, 2674)
