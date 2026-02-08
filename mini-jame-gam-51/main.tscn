@@ -64,11 +64,13 @@ theme_override_constants/separation = 50
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=907371761]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1618889992]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 50
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

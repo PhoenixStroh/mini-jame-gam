@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b6h3ebfi2j26a" path="res://actors/fish/fish.gd" id="1_5fmmu"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="3_lqafy"]
 
-[node name="Fish" type="Node2D" unique_id=464717527 node_paths=PackedStringArray("_area")]
+[node name="Fish" type="Node2D" unique_id=464717527 node_paths=PackedStringArray("_area", "_audio")]
 script = ExtResource("1_5fmmu")
 _area = NodePath("Area2D")
+_audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1231849867]
 

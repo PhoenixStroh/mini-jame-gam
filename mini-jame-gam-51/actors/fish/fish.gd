@@ -11,6 +11,7 @@ extends Node2D
 @export var species_picture: Texture2D
 
 @export var _area: Area2D
+@export var _audio: AudioStreamPlayer2D
 
 var _start_position: Vector2
 var _end_position: Vector2
@@ -18,6 +19,10 @@ var _movement_tween: Tween
 
 
 func _ready() -> void:
+	# Connect to volume signals.
+	add_to_group("fish")
+
+	# Record start and end positions of path.
 	_start_position = start_point.global_position
 	_end_position = end_point.global_position
 	
@@ -30,3 +35,11 @@ func _ready() -> void:
 	_movement_tween.tween_interval(2)
 	_movement_tween.tween_property(self, "global_position", _end_position, movement_duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
 	_movement_tween.tween_interval(2)
+
+
+func decrease_volume():
+	_audio.volume_db -= 1
+
+
+func increase_volume():
+	_audio.volume_db += 1
