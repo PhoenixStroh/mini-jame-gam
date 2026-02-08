@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bmyrbyswtsp2x"]
+
+[ext_resource type="Script" uid="uid://b0tbqbrbt14lq" path="res://actors/hook/hook.gd" id="1_b33q5"]
+[ext_resource type="Texture2D" uid="uid://cjlwepxfxu21k" path="res://images/godot_icon.png" id="1_p38s4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b33q5"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p38s4"]
+size = Vector2(144, 141)
+
+[node name="Hook" type="CharacterBody2D" unique_id=1417838539]
+script = ExtResource("1_b33q5")
+
+[node name="ObligatoryCollisionShape" type="CollisionShape2D" parent="." unique_id=1455325797]
+shape = SubResource("RectangleShape2D_b33q5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=600197289]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_p38s4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1534309726]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=871539905]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_p38s4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

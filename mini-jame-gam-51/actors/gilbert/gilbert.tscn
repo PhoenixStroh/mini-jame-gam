@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bw5fq7j250xhe"]
+
+[ext_resource type="Texture2D" uid="uid://cjlwepxfxu21k" path="res://images/godot_icon.png" id="1_3lden"]
+
+[node name="Gilbert" type="Sprite2D" unique_id=781242402]
+texture = ExtResource("1_3lden")

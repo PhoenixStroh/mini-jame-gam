@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://c7pierq7j35q6"]
 
-[node name="Game" type="Node2D" unique_id=1070103184]
+[ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://ceyppctyehkp0" path="res://images/game_background.png" id="4_fc0e3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
+font_size = 100
+
+[node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label")]
+script = ExtResource("1_80nbo")
+label = NodePath("Label")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1246656821]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fc0e3")
+
+[node name="Label" type="Label" parent="." unique_id=1008945419]
+visible = false
+offset_left = 395.0
+offset_top = 198.0
+offset_right = 1689.0
+offset_bottom = 457.0
+text = "YOU CAUGHT SOMETHING!"
+label_settings = SubResource("LabelSettings_fc0e3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
+position = Vector2(935, 961)
+
+[node name="Fish" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point") instance=ExtResource("2_e2o6t")]
+position = Vector2(950, 744)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+
+[node name="StartPoint" type="Node2D" parent="Fish" unique_id=1163357568]
+position = Vector2(-730, 98)
+
+[node name="EndPoint" type="Node2D" parent="Fish" unique_id=978321792]
+position = Vector2(630, 55)
+
+[connection signal="caught_fish" from="Hook" to="." method="_on_hook_caught_fish"]

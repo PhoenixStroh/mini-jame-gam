@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b43p4e4j2yun1"]
+
+[ext_resource type="Script" uid="uid://b6h3ebfi2j26a" path="res://actors/fish/fish.gd" id="1_5fmmu"]
+[ext_resource type="Texture2D" uid="uid://cjlwepxfxu21k" path="res://images/godot_icon.png" id="1_uh2ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh2ou"]
+size = Vector2(253, 248)
+
+[node name="Fish" type="Sprite2D" unique_id=110384268]
+texture = ExtResource("1_uh2ou")
+script = ExtResource("1_5fmmu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1231849867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1405735476]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_uh2ou")
