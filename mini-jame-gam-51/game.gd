@@ -7,8 +7,8 @@ extends Node2D
 func _on_hook_caught_fish(fish: Fish) -> void:
 	label.visible = true
 	fish_picture.visible = true
-	
-	label.text = "You caught a " + fish.species_name + "!"
+
+	label.text = fish.species_catch_text
 	fish_picture.texture = fish.species_picture
 	await get_tree().create_timer(2).timeout
 

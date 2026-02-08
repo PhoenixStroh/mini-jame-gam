@@ -7,7 +7,7 @@ extends Node2D
 
 @export var movement_duration: float = 1.0
 
-@export var species_name: String
+@export var species_catch_text: String
 @export var species_picture: Texture2D
 
 @export var _area: Area2D

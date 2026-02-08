@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
+[ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://ceyppctyehkp0" path="res://images/game_background.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
+font = ExtResource("3_ryrav")
 font_size = 100
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
@@ -72,23 +74,23 @@ size_flags_vertical = 4
 [node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
 position = Vector2(935, 961)
 
-[node name="Fish" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+[node name="Octopus" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(779.6666, 855.5)
 scale = Vector2(0.5388889, 0.5388889)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
 catch_box = NodePath("CollisionShape2D")
 movement_duration = 5.0
-species_name = "Octopus"
+species_catch_text = "Damn.. You really got my ass.."
 species_picture = ExtResource("5_7jktm")
 
-[node name="StartPoint" type="Node2D" parent="Fish" unique_id=1163357568]
+[node name="StartPoint" type="Node2D" parent="Octopus" unique_id=1163357568]
 position = Vector2(-1144.33, 10.206207)
 
-[node name="EndPoint" type="Node2D" parent="Fish" unique_id=978321792]
-position = Vector2(630, 55)
+[node name="EndPoint" type="Node2D" parent="Octopus" unique_id=978321792]
+position = Vector2(1809.897, 36.185516)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish" unique_id=177041305]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Octopus" unique_id=177041305]
 shape = SubResource("CircleShape2D_7jktm")
 
 [connection signal="caught_fish" from="Hook" to="." method="_on_hook_caught_fish"]

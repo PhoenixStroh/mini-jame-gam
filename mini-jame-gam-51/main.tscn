@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cq8api2vch67t"]
 
 [ext_resource type="Script" uid="uid://mj3mm2a6m4ft" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="2_0xm2m"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7dm0k"]
 color = Color(0, 0, 0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
+font = ExtResource("2_0xm2m")
 font_size = 200
 
 [node name="Main" type="Control" unique_id=1794076326]
@@ -61,10 +63,12 @@ theme_override_constants/separation = 50
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=907371761]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "PLAY"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1618889992]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
