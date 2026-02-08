@@ -109,9 +109,9 @@ albedo_texture = ExtResource("13_80cx4")
 billboard_mode = 2
 billboard_keep_scale = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvswv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t46w6"]
 transparency = 1
-albedo_texture = ExtResource("16_e8heu")
+albedo_texture = ExtResource("15_rvswv")
 billboard_mode = 2
 billboard_keep_scale = true
 
@@ -504,61 +504,73 @@ shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Anchovies3D" type="MeshInstance3D" parent="." unique_id=1389537294]
 transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 4.353459, 1.2881796, 1.0120918)
+visible = false
 material_override = SubResource("StandardMaterial3D_l1i01")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Bass3D" type="MeshInstance3D" parent="." unique_id=1734635684]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 4.2535686, 1.6754763, -1.3271422)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 4.6166744, 1.6754768, 0.6354873)
+visible = false
 material_override = SubResource("StandardMaterial3D_e8heu")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Clam3D" type="MeshInstance3D" parent="." unique_id=1653983797]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 1.1477027, 1.6754763, -1.3271422)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, -1.666579, 0.6975696, -1.712017)
+visible = false
 material_override = SubResource("StandardMaterial3D_r62pu")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Cod3D" type="MeshInstance3D" parent="." unique_id=73970566]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 1.1477027, 2.196077, -1.3271422)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 0.3431363, 1.2279258, -2.5469484)
+visible = false
 material_override = SubResource("StandardMaterial3D_klri6")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Eel3D" type="MeshInstance3D" parent="." unique_id=1517317265]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 3.5412474, 1.2881796, -2.8509483)
-material_override = SubResource("StandardMaterial3D_rvswv")
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 3.886094, 1.2881796, -3.164044)
+visible = false
+material_override = SubResource("StandardMaterial3D_t46w6")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Flounder3D" type="MeshInstance3D" parent="." unique_id=914882070]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 2.7656674, 1.4940832, -1.7079258)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 2.2184744, 1.4838619, -1.5502601)
+visible = false
 material_override = SubResource("StandardMaterial3D_boyg6")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Manatee3D" type="MeshInstance3D" parent="." unique_id=429635401]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 2.7656674, 2.4940832, -1.7079258)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 2.0173934, 1.8965127, -5.051778)
+visible = false
 material_override = SubResource("StandardMaterial3D_eu6ph")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Octopus3D" type="MeshInstance3D" parent="." unique_id=767377515]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 3.9924946, 2.4940832, -1.7079258)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 5.299639, 2.4940832, -3.9880896)
+visible = false
 material_override = SubResource("StandardMaterial3D_edr7y")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Salmon3D" type="MeshInstance3D" parent="." unique_id=1412019078]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 4.486026, 1.6084301, -2.8509483)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 6.0966377, 1.6084292, -2.6699657)
+visible = false
 material_override = SubResource("StandardMaterial3D_kq12w")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Seahorse3D" type="MeshInstance3D" parent="." unique_id=746222754]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 1.9730983, 1.6084301, -2.8509483)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, -0.9141046, 1.6084306, -4.6401434)
+visible = false
 material_override = SubResource("StandardMaterial3D_hb5m1")
 mesh = SubResource("QuadMesh_7sc4i")
 
 [node name="Tuna3D" type="MeshInstance3D" parent="." unique_id=1006898060]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, 0.09554148, 1.6084301, -2.8509483)
+transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, -2.5842125, 1.6084311, -3.511403)
+visible = false
 material_override = SubResource("StandardMaterial3D_4v2jo")
 mesh = SubResource("QuadMesh_l1i01")
 
 [node name="Whale3D" type="MeshInstance3D" parent="." unique_id=219404281]
-transform = Transform3D(4.8, 0, 0, 0, 2.6999998, 0, 0, 0, 9.6, -1.2666662, 1.6084301, -1.5179032)
+transform = Transform3D(8.673877, 0, 0, 0, 4.879055, 0, 0, 0, 9.6, -1.6550366, 2.2577147, -6.403664)
+visible = false
 material_override = SubResource("StandardMaterial3D_qhcbd")
 mesh = SubResource("QuadMesh_7sc4i")
 
