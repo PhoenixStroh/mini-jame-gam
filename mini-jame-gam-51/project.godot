@@ -14,6 +14,10 @@ config/name="Mini Jame Gam 51"
 run/main_scene="uid://cq8api2vch67t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[autoload]
+
+OptionsManager="*uid://340uqatuq178"
+
 [display]
 
 window/size/viewport_width=1920

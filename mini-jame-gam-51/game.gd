@@ -1,16 +1,13 @@
 extends Node2D
 
-signal decrease_volume
-signal increase_volume
-
 @export var label: Label
 @export var fish_picture: TextureRect
+@export var options_menu_parent: Control
 
 
-func _ready() -> void:
-	for fish:Fish in get_tree().get_nodes_in_group("fish"):
-		decrease_volume.connect(fish.decrease_volume)
-		increase_volume.connect(fish.increase_volume)
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		options_menu_parent.visible = !options_menu_parent.visible 
 
 
 func _on_hook_caught_fish(fish: Fish) -> void:
@@ -25,9 +22,5 @@ func _on_hook_caught_fish(fish: Fish) -> void:
 	fish_picture.visible = false
 
 
-func _on_increase_volume_button_pressed() -> void:
-	increase_volume.emit()
-
-
-func _on_decrease_volume_button_pressed() -> void:
-	decrease_volume.emit()
+func _on_options_menu_back_requested() -> void:
+	options_menu_parent.visible = !options_menu_parent.visible 

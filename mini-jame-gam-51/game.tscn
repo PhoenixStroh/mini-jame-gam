@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
+[ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
 [ext_resource type="Texture2D" uid="uid://ceyppctyehkp0" path="res://images/game_background.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
 
@@ -14,10 +15,11 @@ font_size = 100
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
 radius = 288.4997
 
-[node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label", "fish_picture")]
+[node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label", "fish_picture", "options_menu_parent")]
 script = ExtResource("1_80nbo")
-label = NodePath("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Label")
-fish_picture = NodePath("MarginContainer/VBoxContainer/VBoxContainer2/TextureRect")
+label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/SpeciesText")
+fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPicture")
+options_menu_parent = NodePath("OptionsMenuParent")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1246656821]
 anchors_preset = 15
@@ -29,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_fc0e3")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=708484462]
+[node name="OnCatchSplash" type="MarginContainer" parent="." unique_id=708484462]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,48 +44,45 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=462455991]
+[node name="VBoxContainer" type="VBoxContainer" parent="OnCatchSplash" unique_id=462455991]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1741265213]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=434406772]
+[node name="VBoxContainer" type="VBoxContainer" parent="OnCatchSplash/VBoxContainer" unique_id=1741265213]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer" unique_id=668624262]
+[node name="MarginContainer" type="MarginContainer" parent="OnCatchSplash/VBoxContainer/VBoxContainer" unique_id=434406772]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SpeciesText" type="Label" parent="OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer" unique_id=668624262]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "YOU CAUGHT SOMETHING"
 label_settings = SubResource("LabelSettings_fc0e3")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1035434305]
+[node name="VBoxContainer2" type="VBoxContainer" parent="OnCatchSplash/VBoxContainer" unique_id=1035434305]
 custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1421662768]
+[node name="SpeciesPicture" type="TextureRect" parent="OnCatchSplash/VBoxContainer/VBoxContainer2" unique_id=1421662768]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="DecreaseVolumeButton" type="Button" parent="." unique_id=1987104460]
-offset_left = 18.0
-offset_top = 11.0
-offset_right = 73.0
-offset_bottom = 58.0
-text = "DECREASE VOLUME"
+[node name="OptionsMenuParent" type="MarginContainer" parent="." unique_id=814178190]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
 
-[node name="IncreaseVolumeButton" type="Button" parent="." unique_id=264804928]
-offset_left = 191.0
-offset_top = 11.0
-offset_right = 346.0
-offset_bottom = 58.0
-text = "INCREASE VOLUME"
+[node name="OptionsMenu" parent="OptionsMenuParent" unique_id=1475999769 instance=ExtResource("4_eow3j")]
+layout_mode = 2
 
 [node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
 position = Vector2(935, 961)
@@ -107,6 +106,5 @@ position = Vector2(1809.897, 36.185516)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Octopus" unique_id=177041305]
 shape = SubResource("CircleShape2D_7jktm")
 
-[connection signal="pressed" from="DecreaseVolumeButton" to="." method="_on_decrease_volume_button_pressed"]
-[connection signal="pressed" from="IncreaseVolumeButton" to="." method="_on_increase_volume_button_pressed"]
+[connection signal="back_requested" from="OptionsMenuParent/OptionsMenu" to="." method="_on_options_menu_back_requested"]
 [connection signal="caught_fish" from="Hook" to="." method="_on_hook_caught_fish"]

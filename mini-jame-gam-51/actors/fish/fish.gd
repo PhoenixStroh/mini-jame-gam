@@ -20,7 +20,7 @@ var _movement_tween: Tween
 
 func _ready() -> void:
 	# Connect to volume signals.
-	add_to_group("fish")
+	OptionsManager.audio_level_changed.connect(reset_audio_level)
 
 	# Record start and end positions of path.
 	_start_position = start_point.global_position
@@ -37,9 +37,5 @@ func _ready() -> void:
 	_movement_tween.tween_interval(2)
 
 
-func decrease_volume():
-	_audio.volume_db -= 1
-
-
-func increase_volume():
-	_audio.volume_db += 1
+func reset_audio_level():
+	_audio.volume_db = OptionsManager.audio_level
