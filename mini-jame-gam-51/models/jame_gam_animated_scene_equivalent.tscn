@@ -54,7 +54,7 @@ xfade_time = 0.1
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sev3r"]
 states/Start/position = Vector2(171.2, 100)
 states/idle_bounce/node = SubResource("AnimationNodeBlendSpace1D_toirp")
-states/idle_bounce/position = Vector2(295.6, 100.00282)
+states/idle_bounce/position = Vector2(296.4, 100.000565)
 states/line_cast/node = SubResource("AnimationNodeAnimation_dbjti")
 states/line_cast/position = Vector2(447.8586, 40.82273)
 states/line_idle/node = SubResource("AnimationNodeAnimation_x6bxd")
@@ -97,4 +97,4 @@ bones/13/scale = Vector3(1.0000076, 0.5772914, 0.7106211)
 [node name="AnimationTree" type="AnimationTree" parent="." index="4" unique_id=254023099]
 tree_root = SubResource("AnimationNodeStateMachine_sev3r")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle_bounce/blend_position = 0.74600244
+parameters/idle_bounce/blend_position = 0.0

@@ -27,6 +27,7 @@ func _on_hook_caught_fish(fish: Fish) -> void:
 	label.visible = true
 	fish_picture.visible = true
 
+	fish_guy_models.increase_bounce()
 	label.text = fish.species_catch_text
 	fish_picture.texture = fish.species_picture
 	await get_tree().create_timer(2).timeout
