@@ -7,6 +7,8 @@ func on_changed_fishing(is_fishing: bool):
     var over_volume := -999 if is_fishing else 0
     var under_volume := 0 if is_fishing else -99
 
+    print("HEREREREREERREERERER")
+
     AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Overwater"), over_volume)
     AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Underwater"), under_volume)
 
