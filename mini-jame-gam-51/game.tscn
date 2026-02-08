@@ -8,10 +8,35 @@
 [ext_resource type="PackedScene" uid="uid://brtddqrbqsyxi" path="res://models/jame_gam_animated_scene_equivalent_v2.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="8_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://cnt2f1q8dqd3n" path="res://images/bass.png" id="9_hve3p"]
+[ext_resource type="AudioStream" uid="uid://da8h1xl58rdws" path="res://audio/bass_bass.ogg" id="10_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://c8bxjb0fhsvgx" path="res://images/anchovies.png" id="11_iotsf"]
+[ext_resource type="Texture2D" uid="uid://jif7im1xexq2" path="res://images/clam.png" id="11_lc2xo"]
+[ext_resource type="AudioStream" uid="uid://bievpi5f7h8d8" path="res://audio/clam_castinet.ogg" id="12_215e1"]
+[ext_resource type="AudioStream" uid="uid://bxlhvvncjv6kr" path="res://audio/anchovy_choir.ogg" id="12_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://j67thmsguo4b" path="res://images/cod.png" id="13_80cx4"]
+[ext_resource type="AudioStream" uid="uid://cp1ydtlpimf3s" path="res://audio/cod_ukulele.ogg" id="14_e8heu"]
+[ext_resource type="Texture2D" uid="uid://mnkne0s0bbf" path="res://images/electric_eel.png" id="15_rvswv"]
+[ext_resource type="AudioStream" uid="uid://qexj62t4vn5s" path="res://audio/eel_electric_guitar.ogg" id="16_boyg6"]
+[ext_resource type="Texture2D" uid="uid://dl3uw1xbacl1n" path="res://images/flounder.png" id="17_e36ub"]
+[ext_resource type="AudioStream" uid="uid://bqfw4gvhyki8m" path="res://audio/flounder_drums.ogg" id="18_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://dmbtfqn7xuhvi" path="res://images/manatee.png" id="19_x5p1p"]
+[ext_resource type="AudioStream" uid="uid://cdppi7fox0ckt" path="res://audio/manatee_cowbell.ogg" id="20_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://br3dnxx1o2sjn" path="res://images/salmon.png" id="23_f1jbl"]
+[ext_resource type="AudioStream" uid="uid://dmxruhfxuskts" path="res://audio/salmon_guitar.ogg" id="24_vaj68"]
+[ext_resource type="Texture2D" uid="uid://buwpvrt7gpl00" path="res://images/seahorse.png" id="25_i2p71"]
+[ext_resource type="AudioStream" uid="uid://oimh0pfuxsa2" path="res://audio/seahorse_trumpet.ogg" id="26_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://r42gd1mpsphb" path="res://images/tuna.png" id="27_5b14r"]
+[ext_resource type="AudioStream" uid="uid://bwdqfissecumh" path="res://audio/tuna_cello.ogg" id="28_bnpwn"]
+[ext_resource type="Texture2D" uid="uid://cedabo0c6w2mo" path="res://images/whale.png" id="29_36jdj"]
+[ext_resource type="AudioStream" uid="uid://j4wsim8d0brw" path="res://audio/whale_choir.ogg" id="30_xfvwf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
 font = ExtResource("3_ryrav")
 font_size = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36jdj"]
+radius = 107.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
 radius = 288.4997
@@ -79,8 +104,152 @@ layout_mode = 2
 
 [node name="Jame_Gam_Animated_V2" parent="." unique_id=47774320 instance=ExtResource("4_j5wjh")]
 
-[node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
+[node name="Hook" parent="." unique_id=1417838539 node_paths=PackedStringArray("end_marker") instance=ExtResource("3_feb5d")]
 position = Vector2(1121, 920)
+end_marker = NodePath("../EndPoint")
+
+[node name="Camera2D" type="Camera2D" parent="Hook" unique_id=2112189339]
+
+[node name="EndPoint" type="Marker2D" parent="." unique_id=481025697]
+position = Vector2(1121, 2674)
+gizmo_extents = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint" unique_id=785354946]
+shape = SubResource("CircleShape2D_36jdj")
+debug_color = Color(0.951574, 0.018650377, 0.5562045, 0.41960785)
+
+[node name="Anchovies" parent="." unique_id=1031080353 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 2135)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught the Anchovy Choir!"
+species_picture = ExtResource("11_iotsf")
+music = ExtResource("12_lc2xo")
+
+[node name="StartPoint" type="Node2D" parent="Anchovies" unique_id=1355375243]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Anchovies" unique_id=1398594631]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchovies" unique_id=1825983216]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Bass" parent="." unique_id=464717527 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "Bass? Bass?? Bass!! Bass??? "
+species_picture = ExtResource("9_hve3p")
+music = ExtResource("10_mfdv2")
+
+[node name="StartPoint" type="Node2D" parent="Bass" unique_id=523058986]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Bass" unique_id=1375473527]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bass" unique_id=369705800]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Clam" parent="." unique_id=493428728 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught The Clams!"
+species_picture = ExtResource("11_lc2xo")
+music = ExtResource("12_215e1")
+
+[node name="StartPoint" type="Node2D" parent="Clam" unique_id=1449742282]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Clam" unique_id=268041541]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clam" unique_id=968342720]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Cod" parent="." unique_id=1344463041 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("13_80cx4")
+music = ExtResource("14_e8heu")
+
+[node name="StartPoint" type="Node2D" parent="Cod" unique_id=745997985]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Cod" unique_id=1686542271]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cod" unique_id=216468926]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="ElectricEel" parent="." unique_id=503991990 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("15_rvswv")
+music = ExtResource("16_boyg6")
+
+[node name="StartPoint" type="Node2D" parent="ElectricEel" unique_id=1369232645]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="ElectricEel" unique_id=297925377]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElectricEel" unique_id=122922767]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Flounder" parent="." unique_id=1283615116 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("17_e36ub")
+music = ExtResource("18_hb5m1")
+
+[node name="StartPoint" type="Node2D" parent="Flounder" unique_id=1985257042]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Flounder" unique_id=932567101]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flounder" unique_id=621677556]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Manatee" parent="." unique_id=1877942414 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("19_x5p1p")
+music = ExtResource("20_qhcbd")
+
+[node name="StartPoint" type="Node2D" parent="Manatee" unique_id=1283632015]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Manatee" unique_id=1988811841]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manatee" unique_id=731387058]
+shape = SubResource("CircleShape2D_7jktm")
 
 [node name="Octopus" parent="." unique_id=110384268 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
 position = Vector2(841.00006, 852.00006)
@@ -100,6 +269,82 @@ position = Vector2(-1144.33, 10.206207)
 position = Vector2(1809.897, 36.185516)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Octopus" unique_id=177041305]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Salmon" parent="." unique_id=2088331146 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("23_f1jbl")
+music = ExtResource("24_vaj68")
+
+[node name="StartPoint" type="Node2D" parent="Salmon" unique_id=105915342]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Salmon" unique_id=1950842223]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salmon" unique_id=126572992]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Seahorse" parent="." unique_id=1940487632 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("25_i2p71")
+music = ExtResource("26_xa8c5")
+
+[node name="StartPoint" type="Node2D" parent="Seahorse" unique_id=1978537973]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Seahorse" unique_id=1910947059]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seahorse" unique_id=871967203]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Tuna" parent="." unique_id=1042806165 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("27_5b14r")
+music = ExtResource("28_bnpwn")
+
+[node name="StartPoint" type="Node2D" parent="Tuna" unique_id=2013503781]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Tuna" unique_id=1414871244]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuna" unique_id=1211523103]
+shape = SubResource("CircleShape2D_7jktm")
+
+[node name="Whale" parent="." unique_id=341391656 node_paths=PackedStringArray("start_point", "end_point", "catch_box") instance=ExtResource("2_e2o6t")]
+position = Vector2(820, 1499)
+start_point = NodePath("StartPoint")
+end_point = NodePath("EndPoint")
+catch_box = NodePath("CollisionShape2D")
+movement_duration = 5.0
+species_catch_text = "You Caught a Cod!"
+species_picture = ExtResource("29_36jdj")
+music = ExtResource("30_xfvwf")
+
+[node name="StartPoint" type="Node2D" parent="Whale" unique_id=2054023878]
+position = Vector2(-692, 29.00003)
+
+[node name="EndPoint" type="Node2D" parent="Whale" unique_id=1320236529]
+position = Vector2(941, 23.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whale" unique_id=1639102472]
 shape = SubResource("CircleShape2D_7jktm")
 
 [connection signal="back_requested" from="OptionsMenuParent/OptionsMenu" to="." method="_on_options_menu_back_requested"]

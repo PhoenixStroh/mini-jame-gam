@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsqj4srswqj6y"
-path="res://.godot/imported/clams.png-cb31cd42d14291d87b6871c2e7b2dc95.ctex"
+uid="uid://m85vqup6uhsp"
+path="res://.godot/imported/anglerfish.png-baeabe614dfb493bd331f68f154900f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/clams.png"
-dest_files=["res://.godot/imported/clams.png-cb31cd42d14291d87b6871c2e7b2dc95.ctex"]
+source_file="res://images/anglerfish.png"
+dest_files=["res://.godot/imported/anglerfish.png-baeabe614dfb493bd331f68f154900f9.ctex"]
 
 [params]
 
