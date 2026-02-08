@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://mj3mm2a6m4ft" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="2_0xm2m"]
+[ext_resource type="Shader" uid="uid://dkc1y75axo6op" path="res://main.gdshader" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ck387vuo3awsi" path="res://images/tile_for_scrolling_background.png" id="3_1bvp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
+shader = ExtResource("2_h2yge")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7dm0k"]
 color = Color(0, 0, 0, 0)
@@ -18,6 +23,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1379126341]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37473494, 0.56839573, 0.8914158, 1)
+
+[node name="ScrollingBackground" type="TextureRect" parent="." unique_id=343243089]
+modulate = Color(0.6627451, 1, 1, 1)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_1bvp3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1bvp3")
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=82809156]
 layout_mode = 1
