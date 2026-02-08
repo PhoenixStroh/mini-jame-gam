@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
-[ext_resource type="PackedScene" uid="uid://23nn2omvla6b" path="res://models/jame_gam_animated_scene_equivalent.tscn" id="4_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://brtddqrbqsyxi" path="res://models/jame_gam_animated_scene_equivalent_v2.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
@@ -20,7 +20,7 @@ script = ExtResource("1_80nbo")
 label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/SpeciesText")
 fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPicture")
 options_menu_parent = NodePath("OptionsMenuParent")
-fish_guy_models = NodePath("Jame_Gam_Animated")
+fish_guy_models = NodePath("Jame_Gam_Animated_V2")
 hook = NodePath("Hook")
 
 [node name="OnCatchSplash" type="MarginContainer" parent="." unique_id=708484462]
@@ -76,7 +76,7 @@ theme_override_constants/margin_bottom = 100
 [node name="OptionsMenu" parent="OptionsMenuParent" unique_id=1475999769 instance=ExtResource("4_eow3j")]
 layout_mode = 2
 
-[node name="Jame_Gam_Animated" parent="." unique_id=1429480506 instance=ExtResource("4_j5wjh")]
+[node name="Jame_Gam_Animated_V2" parent="." unique_id=47774320 instance=ExtResource("4_j5wjh")]
 
 [node name="Hook" parent="." unique_id=1417838539 instance=ExtResource("3_feb5d")]
 position = Vector2(1121, 920)
