@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c7pierq7j35q6"]
+[gd_scene format=3 uid="uid://0bqlqujvj8mg"]
 
-[ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Script" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://ceyppctyehkp0" path="res://images/game_background.png" id="4_fc0e3"]
@@ -40,6 +40,7 @@ position = Vector2(935, 961)
 position = Vector2(950, 744)
 start_point = NodePath("StartPoint")
 end_point = NodePath("EndPoint")
+movement_duration = 5.0
 
 [node name="StartPoint" type="Node2D" parent="Fish" unique_id=1163357568]
 position = Vector2(-730, 98)

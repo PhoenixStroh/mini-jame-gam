@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6h3ebfi2j26a" path="res://actors/fish/fish.gd" id="1_5fmmu"]
 [ext_resource type="Texture2D" uid="uid://cjlwepxfxu21k" path="res://images/godot_icon.png" id="1_uh2ou"]
+[ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="3_lqafy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh2ou"]
 size = Vector2(253, 248)
@@ -15,3 +16,10 @@ script = ExtResource("1_5fmmu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1405735476]
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_uh2ou")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1022451979]
+stream = ExtResource("3_lqafy")
+autoplay = true
+max_distance = 800.0
+attenuation = 3.0314333
+panning_strength = 3.0
