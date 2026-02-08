@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://0bqlqujvj8mg"]
 
 [ext_resource type="Script" uid="uid://xnpgrytop603" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://dt2v0irfc8beo" path="res://images/Splash_001.PNG" id="2_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://b43p4e4j2yun1" path="res://actors/fish/fish.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://bs3ggahkyeu4q" path="res://audio_manager.gd" id="2_xfvwf"]
+[ext_resource type="Texture2D" uid="uid://h5p0dea6pry5" path="res://images/Splash_002.PNG" id="3_80cx4"]
 [ext_resource type="PackedScene" uid="uid://bmyrbyswtsp2x" path="res://actors/hook/hook.tscn" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://d20j4lrf88dsi" path="res://fonts/Cute Dino.ttf" id="3_ryrav"]
+[ext_resource type="Texture2D" uid="uid://dtpvehpknw5ja" path="res://images/Splash_003.PNG" id="4_e8heu"]
 [ext_resource type="PackedScene" uid="uid://do0h37hr4gm0r" path="res://ui/options_menu.tscn" id="4_eow3j"]
-[ext_resource type="PackedScene" uid="uid://brtddqrbqsyxi" path="res://models/jame_gam_animated_scene_equivalent_v2.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://b7s4wkhcxmpi4" path="res://images/octopus.png" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://kill42kd8qi6" path="res://images/Splash_004.PNG" id="5_rvswv"]
+[ext_resource type="Texture2D" uid="uid://c5iofnkkws8on" path="res://images/Splash_005.PNG" id="6_boyg6"]
+[ext_resource type="Texture2D" uid="uid://cqm3ruq53frww" path="res://images/Splash_006.PNG" id="7_e36ub"]
+[ext_resource type="Texture2D" uid="uid://dfvbqgtadin3y" path="res://images/Splash_007.PNG" id="8_hb5m1"]
 [ext_resource type="AudioStream" uid="uid://c3t0qrlwxt4hv" path="res://audio/octopus_piano.ogg" id="8_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://cnt2f1q8dqd3n" path="res://images/bass.png" id="9_hve3p"]
 [ext_resource type="AudioStream" uid="uid://da8h1xl58rdws" path="res://audio/bass_bass.ogg" id="10_mfdv2"]
@@ -31,6 +37,36 @@
 [ext_resource type="AudioStream" uid="uid://bwdqfissecumh" path="res://audio/tuna_cello.ogg" id="28_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://cedabo0c6w2mo" path="res://images/whale.png" id="29_36jdj"]
 [ext_resource type="AudioStream" uid="uid://j4wsim8d0brw" path="res://audio/whale_choir.ogg" id="30_xfvwf"]
+[ext_resource type="PackedScene" uid="uid://jrrilab56mnj" path="res://models/jame_gam_animated_scene_equivalent_v3.tscn" id="11_7sc4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5p1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7sc4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_80cx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8heu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rvswv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_boyg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e36ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hb5m1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
 font = ExtResource("3_ryrav")
@@ -42,12 +78,13 @@ radius = 107.25
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jktm"]
 radius = 288.4997
 
-[node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label", "fish_picture", "options_menu_parent", "fish_guy_models", "hook")]
+[node name="Game" type="Node2D" unique_id=1070103184 node_paths=PackedStringArray("label", "fish_picture", "splash_animation", "options_menu_parent", "fish_guy_models", "hook")]
 script = ExtResource("1_80nbo")
 label = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer/MarginContainer/SpeciesText")
 fish_picture = NodePath("OnCatchSplash/VBoxContainer/VBoxContainer2/SpeciesPicture")
+splash_animation = NodePath("OnCatchSplash/AnimatedSprite2D")
 options_menu_parent = NodePath("OptionsMenuParent")
-fish_guy_models = NodePath("Jame_Gam_Animated_V2")
+fish_guy_models = NodePath("Jame_Gam_Animated_V3")
 hook = NodePath("Hook")
 
 [node name="AudioManager" type="Node" parent="." unique_id=222330517]
@@ -65,6 +102,14 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OnCatchSplash" unique_id=928153341]
+visible = false
+position = Vector2(970, 550)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_x5p1p")
+frame = 6
+frame_progress = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OnCatchSplash" unique_id=462455991]
 layout_mode = 2
@@ -106,7 +151,7 @@ theme_override_constants/margin_bottom = 100
 [node name="OptionsMenu" parent="OptionsMenuParent" unique_id=1475999769 instance=ExtResource("4_eow3j")]
 layout_mode = 2
 
-[node name="Jame_Gam_Animated_V2" parent="." unique_id=47774320 instance=ExtResource("4_j5wjh")]
+[node name="Jame_Gam_Animated_V3" parent="." unique_id=1620742846 instance=ExtResource("11_7sc4i")]
 
 [node name="Hook" parent="." unique_id=1417838539 node_paths=PackedStringArray("end_marker") instance=ExtResource("3_feb5d")]
 position = Vector2(1121, 920)

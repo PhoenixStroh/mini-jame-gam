@@ -1,18 +1,25 @@
 class_name FishGuyModels
 extends Node3D
 
+signal intro_finished
+
 @export var animation_tree: AnimationTree
 @export var camera_animation_player: AnimationPlayer
 
 
 func _ready() -> void:
-	camera_animation_player.play("introduction")
 	play("idle_bounce")
 
 
 func play(animation_name:String) -> void:
 	var state_machine = animation_tree["parameters/playback"]
 	state_machine.travel(animation_name)
+
+
+func play_intro() -> void:
+	camera_animation_player.play("introduction")
+	await get_tree().create_timer(3).timeout
+	intro_finished.emit()
 
 
 func increase_bounce() -> void:

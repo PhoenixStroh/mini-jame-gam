@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck387vuo3awsi"
-path="res://.godot/imported/tile_for_scrolling_background.png-871f9ae105196f39ccc98a29df8801a3.ctex"
+uid="uid://kill42kd8qi6"
+path="res://.godot/imported/Splash_004.PNG-4e4cc082ac059a0f91ab2d2d7ca08844.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tile_for_scrolling_background.png"
-dest_files=["res://.godot/imported/tile_for_scrolling_background.png-871f9ae105196f39ccc98a29df8801a3.ctex"]
+source_file="res://images/Splash_004.PNG"
+dest_files=["res://.godot/imported/Splash_004.PNG-4e4cc082ac059a0f91ab2d2d7ca08844.ctex"]
 
 [params]
 
